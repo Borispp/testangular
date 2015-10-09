@@ -1,0 +1,30 @@
+{
+  "name": "fabium",
+  "version": "0.0.1",
+  "description": "fabium bower",
+  "main": "gulpfile.js",
+  "keywords": [
+    "frontend",
+    "fabium"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "handlebars": "~4.0.0",
+    "requirejs-plugin-bower": "*",
+    "bootstrap": "~3.3.5",
+    "underscore": "~1.8.3",
+    "angular": "~1.4.5",
+    "domReady": "requirejs/domReady#~2.0.1",
+    "angular-ui-router": "angular-ui/ui-router#~0.2.15",
+    "angular-local-storage": "grevory/angular-local-storage#~0.2.2"
+  },
+  "devDependencies": {
+    "jquery": "~2.1.3"
+  }
+}

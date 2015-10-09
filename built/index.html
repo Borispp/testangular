@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Manager</title>
+  <link href="assets/libs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="assets/styles/main.css" rel="stylesheet" type="text/css">
+</head>
+<body ng-app="app" ng-cloak>
+  <div class="wrapper">
+    <div class="container-fluid customers">
+      <br><br>
+      <p><a ui-sref="customersList">Main Page</a></p>
+      <div class="customer--item">
+        <div ui-view></div>
+
+        <div ui-view="customerPage"></div>
+        <div ui-view="customersList"></div>
+        <div ui-view="customerAdd"></div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/libs/angular/angular.js"></script>
+  <script src="assets/libs/angular-ui-router/release/angular-ui-router.js"></script>
+  <script src="assets/libs/angular-local-storage/dist/angular-local-storage.min.js"></script>
+
+  <script src="assets/scripts/main.js"></script>
+
+  <script src="assets/scripts/app/commons/main.js"></script>
+  <script src="assets/scripts/app/commons/config/routes.js"></script>
+
+  <script src="assets/scripts/app/customers/main.js"></script>
+  <script src="assets/scripts/app/customers/models/customerModelFactory.js"></script>
+  <script src="assets/scripts/app/customers/services/customersService.js"></script>
+  <script src="assets/scripts/app/customers/controllers/customersController.js"></script>
+  <script src="assets/scripts/app/customers/directives/customersDirectives.js"></script>
+</body>
+</html>

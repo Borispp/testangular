@@ -1,0 +1,26 @@
+<form id="addForm" name="ctrl.addForm" ng-submit="ctrl.addCustomer()">
+	<fieldset>
+		<p>
+			<input type="text" ng-model="ctrl.customer.name" placeholder="Name" class="form-control"
+				ng-maxlength="80"
+				ng-required="true"
+				/>
+			<span class="m-error">Please, fill in your name</span>
+		</p>
+		<p>
+			<input type="text" ng-model="ctrl.customer.address" placeholder="Address" class="form-control"
+				ng-maxlength="80"
+				ng-required="true"
+				/>
+			<span class="m-error">Please, fill in your address</span>
+		</p>
+		<p>
+			<input type="email" ng-model="ctrl.customer.email" placeholder="Email" class="form-control"
+				ng-maxlength="80"
+				ng-required="true"
+				/>
+			<span class="m-error">Please, fill in correct email</span>
+		</p>
+		<input type="submit" class="btn btn-success" value="Add Customer">
+	</fieldset>
+</form>
