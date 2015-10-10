@@ -3,7 +3,20 @@ class CustomersService
 
 	constructor: (@$http, @$q, $injector, @localStorageService) ->
 		@CustomerModel = $injector.get('CustomerModel')
-		
+		# @localStorageService.set 'customers'
+
+	getDate: ->
+		date = new Date()
+		options =
+		  weekday: 'long'
+		  year: 'numeric'
+		  month: 'short'
+		  day: 'numeric'
+		  hour: '2-digit'
+		  minute: '2-digit'
+		  second: '2-digit'
+
+		return date.toLocaleDateString("en-US", options)
 
 	generateUniqueId: ->
 		s4 = ->
@@ -16,6 +29,16 @@ class CustomersService
 
 		customers[id] = customer
 		customers[id].id = id
+		customers[id].create = @getDate()
+
+		@localStorageService.set 'customers', customers
+
+	saveCustomer: (customer) ->
+		customers = @getCustomers()
+		id = customer.id
+
+		customers[id] = customer
+		customers[id].modify = @getDate()
 
 		@localStorageService.set 'customers', customers
 

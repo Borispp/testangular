@@ -34,22 +34,11 @@ class CustomerPageController
 	getCustomer: (id) ->
 		@$scope.customer = @customersService.getCustomers()[id]
 
-class CustomersEditController
-	@$inject = ['$injector', '$scope']
-	constructor: ($injector, @$scope) ->
-		# @customerModel = $injector.get('CustomerModel')
-		@customersService = $injector.get('customersService')
-		@init()
-	init: ->
-		#
-
-	addCustomer: ->
-		@customersService.addCustomer @$scope.ctrl.customer
-
+	saveCustomer: ->
+		@customersService.saveCustomer @$scope.customer
 
 
 angular.module('app.customers.controllers')
 	.controller('customersAddController', CustomersAddController)
 	.controller('customersListController', CustomersListController)
-	.controller('customersEditController', CustomersEditController)
 	.controller('customerPageController', CustomerPageController)

@@ -23,11 +23,8 @@ class Routes
 				views:
 					"customerPage":
 						templateUrl: 'assets/scripts/app/customers/templates/customer_page.html',
-						controller: 'customerPageController'
-			.state 'customers.edit',
-				url: '/edit',
-				templateUrl: 'assets/scripts/app/customers/templates/edit.html'
-				controller: 'customersEditController'
+						controller: 'customerPageController',
+						controllerAs: 'ctrl'
 
 angular.module 'app.commons.config'
 	.config Routes

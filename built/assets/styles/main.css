@@ -131,6 +131,16 @@ input.ng-untouched {
 input.ng-untouched + .m-error {
   display: none;
 }
+.m-hide {
+  display: none;
+}
+.linkLabel {
+  color: #23527c;
+  cursor: pointer;
+}
+.linkLabel.m-live {
+  border-bottom: 1px dotted #23527c;
+}
 .wrapper {
   max-width: 1200px;
   margin: 0 auto;
@@ -157,6 +167,12 @@ input.ng-untouched + .m-error {
 .customers .customers_list {
   margin: 12px 0;
   line-height: 18px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #eee;
+}
+.customers .customers_list h3 em {
+  font-size: 14px;
+  color: #999;
 }
 .customers .customers_list strong {
   font-weight: bold;

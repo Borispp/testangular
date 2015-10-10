@@ -1,4 +1,4 @@
-var CustomerPageController, CustomersAddController, CustomersEditController, CustomersListController;
+var CustomerPageController, CustomersAddController, CustomersListController;
 
 CustomersAddController = (function() {
   CustomersAddController.$inject = ['$injector', '$scope'];
@@ -63,27 +63,12 @@ CustomerPageController = (function() {
     return this.$scope.customer = this.customersService.getCustomers()[id];
   };
 
+  CustomerPageController.prototype.saveCustomer = function() {
+    return this.customersService.saveCustomer(this.$scope.customer);
+  };
+
   return CustomerPageController;
 
 })();
 
-CustomersEditController = (function() {
-  CustomersEditController.$inject = ['$injector', '$scope'];
-
-  function CustomersEditController($injector, $scope) {
-    this.$scope = $scope;
-    this.customersService = $injector.get('customersService');
-    this.init();
-  }
-
-  CustomersEditController.prototype.init = function() {};
-
-  CustomersEditController.prototype.addCustomer = function() {
-    return this.customersService.addCustomer(this.$scope.ctrl.customer);
-  };
-
-  return CustomersEditController;
-
-})();
-
-angular.module('app.customers.controllers').controller('customersAddController', CustomersAddController).controller('customersListController', CustomersListController).controller('customersEditController', CustomersEditController).controller('customerPageController', CustomerPageController);
+angular.module('app.customers.controllers').controller('customersAddController', CustomersAddController).controller('customersListController', CustomersListController).controller('customerPageController', CustomerPageController);

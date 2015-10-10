@@ -26,13 +26,10 @@ Routes = (function() {
       views: {
         "customerPage": {
           templateUrl: 'assets/scripts/app/customers/templates/customer_page.html',
-          controller: 'customerPageController'
+          controller: 'customerPageController',
+          controllerAs: 'ctrl'
         }
       }
-    }).state('customers.edit', {
-      url: '/edit',
-      templateUrl: 'assets/scripts/app/customers/templates/edit.html',
-      controller: 'customersEditController'
     });
   }
 

@@ -10,6 +10,21 @@ CustomersService = (function() {
     this.CustomerModel = $injector.get('CustomerModel');
   }
 
+  CustomersService.prototype.getDate = function() {
+    var date, options;
+    date = new Date();
+    options = {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit'
+    };
+    return date.toLocaleDateString("en-US", options);
+  };
+
   CustomersService.prototype.generateUniqueId = function() {
     var s4;
     s4 = function() {
@@ -24,6 +39,16 @@ CustomersService = (function() {
     id = this.generateUniqueId();
     customers[id] = customer;
     customers[id].id = id;
+    customers[id].create = this.getDate();
+    return this.localStorageService.set('customers', customers);
+  };
+
+  CustomersService.prototype.saveCustomer = function(customer) {
+    var customers, id;
+    customers = this.getCustomers();
+    id = customer.id;
+    customers[id] = customer;
+    customers[id].modify = this.getDate();
     return this.localStorageService.set('customers', customers);
   };
 
