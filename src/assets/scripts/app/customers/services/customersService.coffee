@@ -44,11 +44,15 @@ class CustomersService
 
 	getCustomers: ->
 		customers = @localStorageService.get('customers') ? {}
-		console.log customers
-		return customers
 
-	# getCustomer: (id) ->
-	# 	@localStorageService.get 'customers'
+	getCustomer: (id) ->
+		customer = @localStorageService.get('customers')[id] ? {}
+		return customer
+
+	remove: (id) ->
+		customers = @getCustomers()
+		delete customers[id]
+		@localStorageService.set 'customers', customers
 
 	sendCustomers: (customers) ->
 		console.log customers

@@ -32,10 +32,13 @@ class CustomerPageController
 		@getCustomer @$stateParams.id
 
 	getCustomer: (id) ->
-		@$scope.customer = @customersService.getCustomers()[id]
+		@$scope.customer = @customersService.getCustomer(id)
 
 	saveCustomer: ->
 		@customersService.saveCustomer @$scope.customer
+
+	remove: (id) ->
+		@customersService.remove id
 
 
 angular.module('app.customers.controllers')

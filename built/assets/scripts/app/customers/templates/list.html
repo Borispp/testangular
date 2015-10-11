@@ -2,7 +2,7 @@
 	<h1>List Customers</h1>
 </div>
 <div class="customers_list" ng-repeat="customer in customers">
-		<h3><a ui-sref="customer({id:customer.id})">{{customer.name}}</a> <em>(create: {{customer.create}}) <span ng-if="customer.modify">, Modify: {{customer.modify}}</span></em></h3>
+	<h3><a ui-sref="customer({id:customer.id})">{{customer.name}}</a> <em>(create: {{customer.create}}) <span ng-if="customer.modify">, Modify: {{customer.modify}}</span></em></h3>
 	<p ng-bind="customer.address"></p>
 	<p ng-bind="customer.email"></p>
 </div>

@@ -135,11 +135,15 @@ input.ng-untouched + .m-error {
   display: none;
 }
 .linkLabel {
+  text-decoration: none;
   color: #23527c;
   cursor: pointer;
 }
 .linkLabel.m-live {
   border-bottom: 1px dotted #23527c;
+}
+.linkLabel:hover {
+  text-decoration: none !important;
 }
 .wrapper {
   max-width: 1200px;

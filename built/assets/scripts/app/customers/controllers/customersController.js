@@ -60,11 +60,15 @@ CustomerPageController = (function() {
   };
 
   CustomerPageController.prototype.getCustomer = function(id) {
-    return this.$scope.customer = this.customersService.getCustomers()[id];
+    return this.$scope.customer = this.customersService.getCustomer(id);
   };
 
   CustomerPageController.prototype.saveCustomer = function() {
     return this.customersService.saveCustomer(this.$scope.customer);
+  };
+
+  CustomerPageController.prototype.remove = function(id) {
+    return this.customersService.remove(id);
   };
 
   return CustomerPageController;

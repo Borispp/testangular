@@ -54,9 +54,20 @@ CustomersService = (function() {
 
   CustomersService.prototype.getCustomers = function() {
     var customers, ref;
-    customers = (ref = this.localStorageService.get('customers')) != null ? ref : {};
-    console.log(customers);
-    return customers;
+    return customers = (ref = this.localStorageService.get('customers')) != null ? ref : {};
+  };
+
+  CustomersService.prototype.getCustomer = function(id) {
+    var customer, ref;
+    customer = (ref = this.localStorageService.get('customers')[id]) != null ? ref : {};
+    return customer;
+  };
+
+  CustomersService.prototype.remove = function(id) {
+    var customers;
+    customers = this.getCustomers();
+    delete customers[id];
+    return this.localStorageService.set('customers', customers);
   };
 
   CustomersService.prototype.sendCustomers = function(customers) {
