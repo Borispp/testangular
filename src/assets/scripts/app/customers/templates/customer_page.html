@@ -2,7 +2,10 @@
 	<h1>{{customer.name}} <strong class="m-gray">#{{customer.id}}</strong></h1>
 	<p><em>(Create: {{customer.create}}) <span ng-if="customer.modify">, Modify: {{customer.modify}}</span></em></p>
 </div>
-<p><input type="checkbox" id="showEdit" ng-model="showEdit" class="m-hide"><label for="showEdit" class="linkLabel m-live">Edit</label></p>
+<p>
+	<input type="checkbox" id="showEdit" ng-model="showEdit" class="m-hide"><label for="showEdit" class="linkLabel m-live">Edit</label>
+	<input type="checkbox" id="showDeleteConfirmation" ng-model="showDeleteConfirmation" class="m-hide"><label for="showDeleteConfirmation" class="linkLabel m-live">Delete</label>
+</p>
 <div class="customers_list">
 	<p><strong>Email:</strong> {{customer.email}}</p>
 	<p><strong>Address:</strong> {{customer.address}}</p>
